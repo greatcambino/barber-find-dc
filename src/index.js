@@ -5,5 +5,5 @@ import App from './App'
 import Footer from './components/footer/footer'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<Footer />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()
