@@ -10,7 +10,8 @@ class Footer extends Component {
     return (
       <Menu fixed="bottom">
         <Menu.Item header>
-          &copy; Terrence Campbell, Chris Tran, Zach Bauer 2018 GA
+          {`\u00A9 Terrence Campbell, Chris Tran, Zach Bauer ${this.props
+            .year} GA`}
         </Menu.Item>
       </Menu>
     )
