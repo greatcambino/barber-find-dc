@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import Footer from './components/footer/footer'
+import WelcomePage from './pages/WelcomePage/WelcomePage'
 import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<Footer />, document.getElementById('root'))
+ReactDOM.render(<WelcomePage />, document.getElementById('root'))
 registerServiceWorker()
