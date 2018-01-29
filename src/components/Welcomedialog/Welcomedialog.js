@@ -1,22 +1,29 @@
-import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Button, Modal, Icon } from 'semantic-ui-react'
+import './Welcomedialog.css'
 
-const WelcomeDialog = () => (
-  <Card>
-    <Card.Content>
-      <Card.Header>
-        BarberHub
-      </Card.Header>
-      <Card.Description>
-      Hello! This app lets you browse a listing of barbers in the Washington DC area (pulled from Foursquare’s API) and view self-barbering techniques from videos we’ve pulled from YouTube. Our group was given exactly one week to build out this app, which includes Express, MongoDB, React.js, and API integration. Click Play to begin!
-      </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-    <div>
-    <Icon link name='play circle' size='huge' color='red' />
-  </div>
-    </Card.Content>
-  </Card>
-)
 
-export default WelcomeDialog
+export default class WelcomeDialog extends Component {
+    render = () => {
+        return (
+             <Modal open={true} dimmer={false} size='small'> 
+                <Modal.Header className='header'>BarberHub</Modal.Header>
+                <Modal.Content className='description'>
+                    <p>Hello! Are you looking for a spot to get your next haircut? This app lets you browse a listing of barbershops in the Washington DC area (pulled from Foursquare’s API). Or, if you prefer to cut your own hair, check out our listing of self-barbering videos (pulled from YouTube). Our group was given exactly one week to build out this app, which incorporates MongoDB, Express, React.js, Node, and API integration. Click one of the icons below to begin!</p>
+                </Modal.Content>
+                <Modal.Actions className='button-container'>
+                    <Button className='button-icons'>
+                        <Icon name='building outline' size='large' />
+                        Shops
+                    </Button >
+                    <p>or</p>
+                    <Button className='button-icons'>
+                        <Icon name='play outline' size='large' />
+                        Videos
+                    </Button>
+                </Modal.Actions>
+            </Modal>
+        )
+    }
+
+}

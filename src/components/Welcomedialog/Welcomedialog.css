@@ -1,0 +1,17 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: maroon;
+    z-index: 10;
+    width: 100%;
+}
+
+.description {
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+}
+
