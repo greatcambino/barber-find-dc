@@ -9,7 +9,7 @@ export default class WelcomeDialog extends Component {
              <Modal open={true} dimmer={false} size='small'> 
                 <Modal.Header className='header'>BarberHub</Modal.Header>
                 <Modal.Content className='description'>
-                    <p>Hello! Are you looking for a spot to get your next haircut? This app lets you browse a listing of barbershops in the Washington DC area (pulled from Foursquare’s API). Or, if you prefer to cut your own hair, check out our listing of self-barbering videos (pulled from YouTube). Our group was given exactly one week to build out this app, which incorporates MongoDB, Express, React.js, Node, and API integration. Click one of the icons below to begin!</p>
+                    <p>Whether you’re looking for your next barber or looking for better tips on cutting your own hair, this app is a one-stop shop. BarberHub lists highly rated barbershops in the Washington DC area along with a round-up of tutorials in self-barbering. Our team was given exactly one week to build out this app, which incorporates MongoDB, Express, React.js, and API integration. Click one of the icons below to begin!</p>
                 </Modal.Content>
                 <Modal.Actions className='button-container'>
                     <Button className='button-icons'>
@@ -19,7 +19,7 @@ export default class WelcomeDialog extends Component {
                     <p>or</p>
                     <Button className='button-icons'>
                         <Icon name='play outline' size='large' />
-                        Videos
+                        Tutorials
                     </Button>
                 </Modal.Actions>
             </Modal>
