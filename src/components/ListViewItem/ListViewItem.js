@@ -25,3 +25,5 @@ class ListViewItem extends Component {
     )
   }
 }
+
+export default ListViewItem

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Modal, Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import './WelcomeDialog.css'
 
 export default class WelcomeDialog extends Component {
@@ -18,12 +19,12 @@ export default class WelcomeDialog extends Component {
           </p>
         </Modal.Content>
         <Modal.Actions className="button-container">
-          <Button className="button-icons">
+          <Button as={Link} to="/shops" className="button-icons">
             <Icon name="building outline" size="large" />
             Shops
           </Button>
           <p>or</p>
-          <Button className="button-icons">
+          <Button as={Link} to="#" className="button-icons">
             <Icon name="play outline" size="large" />
             Tutorials
           </Button>
