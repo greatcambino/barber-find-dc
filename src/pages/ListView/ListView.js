@@ -3,6 +3,7 @@ import { List } from 'semantic-ui-react'
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
 import ListViewItem from '../../components/ListViewItem/ListViewItem'
+import './ListView.css'
 
 class ListView extends Component {
   state = {
