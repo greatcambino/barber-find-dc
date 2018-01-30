@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
+import './ListView.css'
 
 class ListView extends Component {
   state = {
