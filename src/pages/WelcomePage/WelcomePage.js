@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Footer from '../../components/Footer/Footer'
 import './WelcomePage.css'
 import ImgCarousel from '../../components/ImgCarousel/ImgCarousel'
+import WelcomeDialog from '../../components/WelcomeDialog/WelcomeDialog'
 
 class WelcomePage extends Component {
   state = {
@@ -16,7 +17,12 @@ class WelcomePage extends Component {
   }
 
   render = () => {
-    return <Footer year={this.state.currentYear} />
+    return (
+      <div>
+        <WelcomeDialog />
+        <Footer year={this.state.currentYear} />
+      </div>
+    )
   }
 }
 
