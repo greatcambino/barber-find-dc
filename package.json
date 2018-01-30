@@ -12,8 +12,9 @@
     "react-scripts": "1.1.0",
     "semantic-ui-react": "^0.77.2"
   },
+  "homepage": "http://zbauer91.github.io/barber-find-dc/",
   "scripts": {
-    "predeploy": "yarn run build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
