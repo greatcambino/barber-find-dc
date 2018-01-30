@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Footer from '../../components/Footer/Footer'
+import './WelcomePage.css'
+import ImgCarousel from '../../components/ImgCarousel/ImgCarousel'
 
 class WelcomePage extends Component {
   state = {
@@ -19,3 +21,5 @@ class WelcomePage extends Component {
 }
 
 export default WelcomePage
+
+// <Footer year={this.state.currentYear} />
