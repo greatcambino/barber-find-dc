@@ -8,7 +8,6 @@ class ImgCarousel extends Component {
   render = () => {
     return (
       <Carousel
-        height="100h"
         showArrows={false}
         showStatus={false}
         showThumbs={false}

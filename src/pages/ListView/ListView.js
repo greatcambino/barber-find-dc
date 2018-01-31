@@ -8,8 +8,15 @@ import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
 
 class ListView extends Component {
+  componentDidMount = () => {
+    let path = this.props.location.pathname
+    this.setState({
+      path: path
+    })
+  }
+
   state = {
-    currentYear: '',
+    path: '',
     shops: [
       {
         name: 'demo cuts',
@@ -35,24 +42,17 @@ class ListView extends Component {
     ]
   }
 
-  componentDidMount = () => {
-    let year = new Date().getFullYear()
-    this.setState({
-      currentYear: year
-    })
-  }
-
   render = () => {
     return (
       <div>
-        <NavBar />
+        <NavBar path={this.state.path} />
         <SubHeader />
         <List>
           {this.state.shops.map((item, idx) => {
             return <ListViewItem business={item} />
           })}
         </List>
-        <Footer year={this.state.currentYear} />
+        <Footer year={this.props.year} />
       </div>
     )
   }
