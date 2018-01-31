@@ -47,9 +47,11 @@ class ListView extends Component {
       <div>
         <NavBar path={this.state.path} />
         <SubHeader />
-        <List>
+        <List className="list-view">
           {this.state.shops.map((item, idx) => {
-            return <ListViewItem business={item} />
+            return (
+              <ListViewItem className="list-card" business={item} key={idx} />
+            )
           })}
         </List>
         <Footer year={this.props.year} />

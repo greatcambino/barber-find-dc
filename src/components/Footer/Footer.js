@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Item } from 'semantic-ui-react'
+import { Menu } from 'semantic-ui-react'
 
 class Footer extends Component {
   state = {
