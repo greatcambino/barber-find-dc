@@ -4,13 +4,14 @@ import { HashRouter as Router } from 'react-router-dom'
 
 import './index.css'
 
+import VideoView from './pages/VideoView/VideoView'
 import WelcomePage from './pages/WelcomePage/WelcomePage'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
   <Router>
-    <App />
+    <VideoView />
   </Router>,
   document.getElementById('root')
 )
