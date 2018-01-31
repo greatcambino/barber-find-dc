@@ -9,13 +9,37 @@ import ListView from './pages/ListView/ListView'
 import About from './pages/About/About'
 
 class App extends Component {
-  render () {
+  state = {
+    year: ''
+  }
+
+  componentDidMount = () => {
+    let year = new Date().getFullYear()
+    this.setState({
+      year: year
+    })
+  }
+
+  render = () => {
     return (
       <main>
         <Switch>
-          <Route path='/' component={WelcomePage} />
-          <Route path='/shops' component={ListView} />
-          <Route path='/about' component={About} />
+          <Route
+            exact
+            path="/"
+            render={props => <WelcomePage year={this.state.year} />}
+          />
+          <Route
+            exact
+            path="/shops"
+            render={props => <ListView year={this.state.year} />}
+          />
+          <Route
+            exact
+            path="/videos"
+            render={props => <ListView year={this.state.year} />}
+          />
+          <Route exact path="/about" render={props => <About {...props} />} />
         </Switch>
       </main>
     )
