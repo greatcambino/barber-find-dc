@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { List } from 'semantic-ui-react'
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
+import SubHeader from '../../components/SubHeader/SubHeader'
+
 import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
 
@@ -44,6 +46,7 @@ class ListView extends Component {
     return (
       <div>
         <NavBar />
+        <SubHeader />
         <List>
           {this.state.shops.map((item, idx) => {
             return <ListViewItem business={item} />
