@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
+import { Button, Header, Modal } from 'semantic-ui-react'
 
-import API from '../../assets/ExpressURL'
 import './ExpandedView.css'
 import UpdateForm from '../UpdateForm/UpdateForm'
 
@@ -38,7 +37,6 @@ export default class ExpandedView extends Component {
             <Header>
               {this.props.barber.rating}
             </Header>
-            <a target="_blank" href="https://goo.gl/maps/nT9dGpLufWR2" />
             <p>
               {this.props.barber.phone}
             </p>
@@ -58,7 +56,7 @@ export default class ExpandedView extends Component {
           </Modal.Description>
           <Modal.Actions>
             <Button onClick={this.props.closeModal}>Close</Button>
-            <Button onClick={this.openUpdateForm}>Close</Button>
+            <Button onClick={this.openUpdateForm}>Update</Button>
           </Modal.Actions>
         </Modal.Content>
         <UpdateForm

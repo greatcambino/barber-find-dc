@@ -9,7 +9,7 @@ import App from './App'
 
 ReactDOM.render(
   <BrowserRouter>
-    <AddForm />
+    <App />
   </BrowserRouter>,
   document.getElementById('root')
 )

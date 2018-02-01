@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Button, Form, Segment, Grid, Modal } from 'semantic-ui-react'
-import GridColumn from 'semantic-ui-react/dist/commonjs/collections/Grid/GridColumn'
 import './UpdateForm.css'
 import axios from 'axios'
 import API from '../../assets/ExpressURL'
