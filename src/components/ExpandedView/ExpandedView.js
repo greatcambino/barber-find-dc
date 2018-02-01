@@ -5,38 +5,47 @@ import API from '../../assets/ExpressURL'
 import './ExpandedView.css'
 import chalk from 'chalk'
 
-class ExpandedView extends Component {
+export default class ExpandedView extends Component {
+  openEditModal = () => {
+    this.props.closeModal()
+  }
+
   render = () => {
+    console.log(this.props)
     return (
-      <Modal open={this.props.modalOpen} dimmer={false} size="small">
+      <Modal open={this.props.modalOpen} dimmer={'blurring'} size="small">
         <Modal.Header>
-          {this.props.name}
+          {this.props.barber.name}
         </Modal.Header>
-        <Modal.Content image>
-          <iframe src="https://www.google.com/maps/embed/v1/place
-          &q=Washington+DC
-          &key=AIzaSyAe_2Yi4B4N3WH9Wj3HA2XnLugNyhMLSpg" />
+        <Modal.Content>
           <Modal.Description>
             <Header>
-              {' '}{this.props.topRating}{' '}
+              {this.props.barber.rating}
             </Header>
+            <a target="_blank" href="https://goo.gl/maps/nT9dGpLufWR2" />
             <p>
-              {this.props.phone}
+              {this.props.barber.phone}
             </p>
             <p>
-              {this.props.website}
+              {this.props.barber.website}
             </p>
             <p>
-              {this.props.location}
+              {this.props.barber.address}
             </p>
+            {this.props.barber.reviews.map((item, idx) => {
+              return (
+                <p key={idx}>
+                  {item.text}
+                </p>
+              )
+            })}
           </Modal.Description>
-          <Modal.Meta>
-            {this.props.reviews}
-          </Modal.Meta>
+          <Modal.Actions>
+            <Button onClick={this.props.closeModal}>Close</Button>
+            <Button onClick={this.openEditModal}>Close</Button>
+          </Modal.Actions>
         </Modal.Content>
       </Modal>
     )
   }
 }
-
-export default ExpandedView

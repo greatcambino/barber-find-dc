@@ -5,16 +5,20 @@ import './ListViewItem.css'
 
 class ListViewItem extends Component {
   state = {
-    modalOpen: false
+    expandoOpen: false
   }
 
-  componentDidMount = () => {
-    console.log(this.props)
-  }
-
-  handleEditClick = () => {
+  handleExpandClick = e => {
+    e.preventDefault()
     this.setState({
-      modalOpen: true
+      expandoOpen: true
+    })
+  }
+
+  closeModal = e => {
+    e.preventDefault()
+    this.setState({
+      expandoOpen: false
     })
   }
 
@@ -28,18 +32,21 @@ class ListViewItem extends Component {
             </Card.Header>
             <Card.Content>
               {this.props.barber.rating}
+              <br />
+              {this.props.barber.address}
             </Card.Content>
-            <Card.Meta>
-              {this.props.barber.location}
-            </Card.Meta>
           </Card.Content>
           <Card.Content extra>
-            <Button floated={'right'} onClick={this.handleEditClick}>
+            <Button floated={'right'} onClick={this.handleExpandClick}>
               Expand View
             </Button>
           </Card.Content>
-          {/* <ExpandedView {...this.props} modalOpen={this.state.modalOpen} /> */}
         </Card>
+        <ExpandedView
+          {...this.props}
+          expandoOpen={this.state.modalOpen}
+          closeModal={this.closeModal}
+        />
       </List.Item>
     )
   }

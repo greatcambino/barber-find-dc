@@ -17,7 +17,6 @@ class ListView extends Component {
   }
 
   state = {
-
     currentYear: '',
     barbers: []
   }
@@ -40,18 +39,17 @@ class ListView extends Component {
       })
   }
 
-
   render = () => {
     return (
       <div>
         <NavBar path={this.state.path} />
         <SubHeader />
-
         <List>
-          {this.state.barbers.map((item, idx) => {
-            return <ListViewItem barber={item} />
-
-          })}
+          <div className="list-view">
+            {this.state.barbers.map((item, idx) => {
+              return <ListViewItem barber={item} key={idx} />
+            })}
+          </div>
         </List>
         <Footer year={this.props.year} />
       </div>
