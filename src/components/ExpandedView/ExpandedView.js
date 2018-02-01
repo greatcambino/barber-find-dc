@@ -7,8 +7,9 @@ import './ExpandedView.css'
 import chalk from 'chalk'
 
 class ExpandedView extends Component {
-
-    state= {
+  constructor (props) {
+    super(props)
+    this.state = {
         shopName: "shop1",
         address: "123 lane",
         hours: "9a - 5p",
@@ -20,8 +21,8 @@ class ExpandedView extends Component {
             'my haircut was just okay'
         ],
         barber: []
-
     }
+  }
 
     componentDidMount () {
       axios.get('http://localhost:9000')
@@ -31,7 +32,10 @@ class ExpandedView extends Component {
         })
         this.setState({
           name: this.state.barber[0].name,
-          address: this.state.barber[0].address
+          address: this.state.barber[0].address,
+          hours: this.state.barber[0].hours,
+          phoneNumber: this.state.barber[0].phone,
+          website: this.state.barber[0].website
         })
       })
       .catch((err) => {
@@ -40,11 +44,10 @@ class ExpandedView extends Component {
       })
     }
 
-    render = () => {
+  render () {
         return (
         <Modal open="true" dimmer={false} size= 'small' >
-        <h1>{this.state.name}</h1>
-        <h4>{this.state.barber[0].name}</h4>
+        <h1>{console.log(this.state.barber[0].name}</h1>
         <Modal.Content image>
           <Image wrapped size='medium' src='/assets/images/wireframe/image.png' />
           <Modal.Description>
