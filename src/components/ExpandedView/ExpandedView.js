@@ -26,11 +26,9 @@ class ExpandedView extends Component {
     componentDidMount () {
       axios.get('http://localhost:9000')
       .then((res) => {
-        console.log('one')
         this.setState ({
           barber: res.data
         })
-        console.log(this.state.barber[0].name)
       })
       .catch((err) => {
         console.log('error')
