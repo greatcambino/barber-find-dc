@@ -7,6 +7,7 @@ import './App.css'
 import WelcomePage from './pages/WelcomePage/WelcomePage'
 import ListView from './pages/ListView/ListView'
 import About from './pages/About/About'
+import VideoView from './pages/VideoView/VideoView'
 
 class App extends Component {
   state = {
@@ -37,9 +38,13 @@ class App extends Component {
           <Route
             exact
             path="/videos"
-            render={props => <ListView {...props} year={this.state.year} />}
+            render={props => <VideoView {...props} year={this.state.year} />}
           />
-          <Route exact path="/about" render={props => <About {...props} />} />
+          <Route
+            exact
+            path="/about"
+            render={props => <About {...props} year={this.state.year} />}
+          />
         </Switch>
       </main>
     )

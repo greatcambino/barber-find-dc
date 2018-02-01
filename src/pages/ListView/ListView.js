@@ -3,6 +3,7 @@ import { List } from 'semantic-ui-react'
 import NavBar from '../../components/NavBar/NavBar'
 import Footer from '../../components/Footer/Footer'
 import SubHeader from '../../components/SubHeader/SubHeader'
+import axios from 'axios'
 
 import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
@@ -16,30 +17,26 @@ class ListView extends Component {
   }
 
   state = {
-    path: '',
-    shops: [
-      {
-        name: 'demo cuts',
-        location: '123 demo street, Washington, D.C., 20003',
-        phone: '123-456-7890',
-        topRating:
-          'This is where a top rating would go, if we had an example to give...'
-      },
-      {
-        name: 'demo cuts 2',
-        location: '6129 Grey Friar Way, Dublin, OH, 43017',
-        phone: '102-443-1230',
-        topRating:
-          'This is where a top rating would go, if we had an example to give...'
-      },
-      {
-        name: 'demo cuts 3',
-        location: '1134 demo street, Seattle, WA, 12345',
-        phone: '123-456-7890',
-        topRating:
-          'This is where a top rating would go, if we had an example to give...'
-      }
-    ]
+    currentYear: '',
+    barbers: []
+  }
+
+  componentDidMount = () => {
+    let year = new Date().getFullYear()
+    this.setState({
+      currentYear: year
+    })
+    axios
+      .get('http://localhost:9000')
+      .catch(err => {
+        console.log('error')
+        console.log(err)
+      })
+      .then(res => {
+        this.setState({
+          barbers: res.data
+        })
+      })
   }
 
   render = () => {
@@ -47,12 +44,12 @@ class ListView extends Component {
       <div>
         <NavBar path={this.state.path} />
         <SubHeader />
-        <List className="list-view">
-          {this.state.shops.map((item, idx) => {
-            return (
-              <ListViewItem className="list-card" business={item} key={idx} />
-            )
-          })}
+        <List>
+          <div className="list-view">
+            {this.state.barbers.map((item, idx) => {
+              return <ListViewItem barber={item} key={idx} />
+            })}
+          </div>
         </List>
         <Footer year={this.props.year} />
       </div>
