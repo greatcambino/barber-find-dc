@@ -25,7 +25,7 @@ export default class WelcomeDialog extends Component {
           </Button>
           <p>or</p>
           <Button as={Link} to="#" className="button-icons">
-            <Icon name="play outline" size="large" />
+            <Icon name="play" size="large" />
             Tutorials
           </Button>
         </Modal.Actions>

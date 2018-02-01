@@ -9,7 +9,7 @@ class VideoView extends Component {
   render = () => {
     return (
       <div>
-        <NavBar />
+        <NavBar path={this.props.location.pathname} />
         <SubHeader />
         <div className="video-container">
           <Card className="videos" fluid>
