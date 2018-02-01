@@ -1,5 +1,5 @@
 {
-  "homepage": "http://zbauer91.github.io/barber-find-dc",
+  "homepage": "http://pixelrabbit.me/barber-find-dc",
   "name": "barber",
   "version": "0.1.0",
   "private": true,
@@ -12,7 +12,6 @@
     "react-scripts": "1.1.0",
     "semantic-ui-react": "^0.77.2"
   },
-  "homepage": "http://zbauer91.github.io/barber-find-dc/",
   "scripts": {
     "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
