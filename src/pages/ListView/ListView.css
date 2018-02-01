@@ -1,0 +1,10 @@
+.list-view {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  height: 150px;
+}
+
+.list-card {
+  /* margin: 0 2vw; */
+}

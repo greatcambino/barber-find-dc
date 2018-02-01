@@ -9,7 +9,15 @@ import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
 
 class ListView extends Component {
+  componentDidMount = () => {
+    let path = this.props.location.pathname
+    this.setState({
+      path: path
+    })
+  }
+
   state = {
+
     currentYear: '',
     barbers: []
   }
@@ -32,17 +40,20 @@ class ListView extends Component {
       })
   }
 
+
   render = () => {
     return (
       <div>
-        <NavBar />
+        <NavBar path={this.state.path} />
         <SubHeader />
+
         <List>
           {this.state.barbers.map((item, idx) => {
             return <ListViewItem barber={item} />
+
           })}
         </List>
-        <Footer year={this.state.currentYear} />
+        <Footer year={this.props.year} />
       </div>
     )
   }

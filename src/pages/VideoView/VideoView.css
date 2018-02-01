@@ -1,0 +1,29 @@
+.top-card-container {
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 3vh 0 9vh 0;
+}
+.card-container {
+  width: 95vw;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.video {
+  padding: 5px;
+}
+.header {
+  font-size: 3vh;
+  font-family: 'Lato';
+  font-weight: bold;
+}

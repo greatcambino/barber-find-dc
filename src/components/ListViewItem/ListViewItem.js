@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { List, Card, Button } from 'semantic-ui-react'
 import ExpandedView from '../ExpandedView/ExpandedView'
+import './ListViewItem.css'
 
 class ListViewItem extends Component {
   state = {
@@ -20,7 +21,7 @@ class ListViewItem extends Component {
   render = () => {
     return (
       <List.Item>
-        <Card>
+        <Card className="list-card">
           <Card.Content>
             <Card.Header>
               {this.props.barber.name}

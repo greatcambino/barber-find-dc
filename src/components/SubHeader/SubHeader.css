@@ -1,10 +1,20 @@
-h1 {
-font-size: 90px;
-text-align: center;
+.head {
+  font-size: 5vw;
+  text-align: center;
 }
 
+.sub-head {
+  font-size: 4vw;
+  text-align: center;
+}
 
-p {
-    font-size: 20px;
-    text-align: center;
+.page-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 2vh 0 4vh 0;
+}
+
+.card-container {
+  width: 50vw !important;
 }
