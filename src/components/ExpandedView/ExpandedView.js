@@ -19,7 +19,7 @@ class ExpandedView extends Component {
             'very good haircut',
             'my haircut was just okay'
         ],
-        barbers: {}
+        barber: []
 
     }
 
@@ -29,16 +29,22 @@ class ExpandedView extends Component {
         this.setState ({
           barber: res.data
         })
+        this.setState({
+          name: this.state.barber[0].name,
+          address: this.state.barber[0].address
+        })
       })
       .catch((err) => {
         console.log('error')
         console.log(err)
       })
     }
+
     render = () => {
         return (
         <Modal open="true" dimmer={false} size= 'small' >
-        <h1>{this.state.shopName}</h1>
+        <h1>{this.state.name}</h1>
+        <h4>{this.state.barber[0].name}</h4>
         <Modal.Content image>
           <Image wrapped size='medium' src='/assets/images/wireframe/image.png' />
           <Modal.Description>
