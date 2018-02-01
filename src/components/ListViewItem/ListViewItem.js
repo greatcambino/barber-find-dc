@@ -44,7 +44,7 @@ class ListViewItem extends Component {
         </Card>
         <ExpandedView
           {...this.props}
-          expandoOpen={this.state.modalOpen}
+          expandoOpen={this.state.expandoOpen}
           closeModal={this.closeModal}
         />
       </List.Item>

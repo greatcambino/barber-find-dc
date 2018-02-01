@@ -13,7 +13,7 @@ export default class ExpandedView extends Component {
   render = () => {
     console.log(this.props)
     return (
-      <Modal open={this.props.modalOpen} dimmer={'blurring'} size="small">
+      <Modal open={this.props.expandoOpen} dimmer={'blurring'} size="small">
         <Modal.Header>
           {this.props.barber.name}
         </Modal.Header>
