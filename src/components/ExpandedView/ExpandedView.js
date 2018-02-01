@@ -3,11 +3,27 @@ import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
 
 import API from '../../assets/ExpressURL'
 import './ExpandedView.css'
-import chalk from 'chalk'
+import UpdateForm from '../UpdateForm/UpdateForm'
 
 export default class ExpandedView extends Component {
+  state = {
+    modalOpen: false
+  }
+
   openEditModal = () => {
     this.props.closeModal()
+  }
+
+  openUpdateForm = () => {
+    this.setState({
+      modalOpen: true
+    })
+  }
+
+  closeForm = () => {
+    this.setState({
+      modalOpen: false
+    })
   }
 
   render = () => {
@@ -42,9 +58,14 @@ export default class ExpandedView extends Component {
           </Modal.Description>
           <Modal.Actions>
             <Button onClick={this.props.closeModal}>Close</Button>
-            <Button onClick={this.openEditModal}>Close</Button>
+            <Button onClick={this.openUpdateForm}>Close</Button>
           </Modal.Actions>
         </Modal.Content>
+        <UpdateForm
+          {...this.props}
+          modalOpen={this.state.modalOpen}
+          closeForm={this.closeForm}
+        />
       </Modal>
     )
   }

@@ -7,14 +7,14 @@ import API from '../../assets/ExpressURL'
 
 class UpdateForm extends Component {
   state = {
-    name: this.props.name,
-    address: this.props.address,
-    website: this.props.website,
-    postalCode: this.props.postalCode,
-    hours: this.props.hours,
-    phone: this.props.phone,
-    city: this.props.city,
-    state: this.props.state
+    name: this.props.barber.name,
+    address: this.props.barber.address,
+    website: this.props.barber.website,
+    postalCode: this.props.barber.postalCode,
+    hours: this.props.barber.hours,
+    phone: this.props.barber.phone,
+    city: this.props.barber.city,
+    state: this.props.barber.state
   }
 
   handleChange(e) {
@@ -25,17 +25,18 @@ class UpdateForm extends Component {
   }
 
   handleSubmit(e) {
+    let putAPI = `${API}/${this.props.barber._id}`
     e.preventDefault()
-    axios.post(API, JSON.stringify(this.state)).catch(err =>
+    axios.put(putAPI, JSON.stringify(this.state)).catch(err =>
       console.log(err).then(res => {
-        this.props.history.push('/shops') // don't forget to update this path
+        this.props.history.push('/shops')
       })
     )
   }
 
   render = () => {
     return (
-      <Modal>
+      <Modal open={this.props.modalOpen}>
         <div className="form-parent">
           <div className="update-form">
             <Grid columns={1} padded>
@@ -108,6 +109,7 @@ class UpdateForm extends Component {
                       />
                     </Form.Group>
                     <Button onClick={this.handleSubmit}>Submit</Button>
+                    <Button onClick={this.props.closeForm}>Close</Button>
                   </Form>
                 </Segment>
               </Grid.Column>
