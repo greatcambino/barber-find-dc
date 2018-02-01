@@ -24,10 +24,10 @@ class ExpandedView extends Component {
     }
   }
 
-    componentDidMount () {
-      axios.get('http://localhost:9000')
+  componentDidMount () {
+    axios.get('http://localhost:9000')
       .then((res) => {
-        this.setState ({
+        this.setState({
           barber: res.data
         })
         this.setState({
@@ -47,9 +47,11 @@ class ExpandedView extends Component {
   render () {
         return (
         <Modal open="true" dimmer={false} size= 'small' >
-        <h1>{console.log(this.state.barber[0].name}</h1>
+        <h1>{this.state.name}</h1>
         <Modal.Content image>
-          <Image wrapped size='medium' src='/assets/images/wireframe/image.png' />
+          <iframe src='https://www.google.com/maps/embed/v1/place
+          &q=Washington+DC
+          &key=AIzaSyAe_2Yi4B4N3WH9Wj3HA2XnLugNyhMLSpg' />
           <Modal.Description>
             <h3>Address: {this.state.address}</h3>
             <h3>Hours: {this.state.hours}</h3>
