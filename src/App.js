@@ -39,7 +39,11 @@ class App extends Component {
             path="/videos"
             render={props => <ListView {...props} year={this.state.year} />}
           />
-          <Route exact path="/about" render={props => <About {...props} />} />
+          <Route
+            exact
+            path="/about"
+            render={props => <About {...props} year={this.state.year} />}
+          />
         </Switch>
       </main>
     )
