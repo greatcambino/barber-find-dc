@@ -24,7 +24,7 @@ export default class WelcomeDialog extends Component {
             Shops
           </Button>
           <p>or</p>
-          <Button as={Link} to="#" className="button-icons">
+          <Button as={Link} to="/videos" className="button-icons">
             <Icon name="play" size="large" />
             Tutorials
           </Button>

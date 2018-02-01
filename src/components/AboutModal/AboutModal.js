@@ -14,7 +14,7 @@ export default class AboutModal extends Component {
             Bauer. This app will, in the future, allow people to search for and
             favorite their preferred barbers, allow for writing detailed
             reviews, and leave feedback for specific barbers. We hope you enjoy
-            our project
+            our project.
           </p>
           <br />
           <h2>
