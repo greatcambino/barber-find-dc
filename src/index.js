@@ -6,7 +6,6 @@ import './index.css'
 
 import AddForm from './components/AddForm/AddForm'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
   <BrowserRouter>
@@ -14,5 +13,3 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 )
-
-// registerServiceWorker()
