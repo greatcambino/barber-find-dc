@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Modal, Icon } from 'semantic-ui-react'
+import { Button, Modal, Icon, Divider } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import './WelcomeDialog.css'
 
@@ -23,7 +23,8 @@ export default class WelcomeDialog extends Component {
             <Icon name="building outline" size="large" />
             Shops
           </Button>
-          <p>or</p>
+          {/* <p>or</p> */}
+          <Divider hidden></Divider>
           <Button as={Link} to="/videos" className="button-icons">
             <Icon name="play" size="large" />
             Tutorials
