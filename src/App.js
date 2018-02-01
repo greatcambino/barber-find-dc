@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <main>
         <Switch>
-          <Route path='/' component={ExpandedView} />
+          <Route path='/' component={WelcomePage} />
           <Route path='/shops' component={ListView} />
           <Route path='/about' component={About} />
         </Switch>
