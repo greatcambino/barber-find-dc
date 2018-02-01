@@ -1,0 +1,11 @@
+
+.form-parent {
+    display: flex;
+    justify-content: center;
+}
+
+
+.add-form {
+    width: 50%;
+    align-items: center
+}
