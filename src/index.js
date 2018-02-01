@@ -4,12 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 
 import './index.css'
 
+import AddForm from './components/AddForm/AddForm'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <AddForm />
   </BrowserRouter>,
   document.getElementById('root')
 )
