@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { List } from 'semantic-ui-react'
 import NavBar from '../../components/NavBar/NavBar'
-import Footer from '../../components/Footer/Footer'
+// import Footer from '../../components/Footer/Footer'
 import SubHeader from '../../components/SubHeader/SubHeader'
 import axios from 'axios'
 
@@ -44,14 +44,16 @@ class ListView extends Component {
       <div>
         <NavBar path={this.state.path} />
         <SubHeader />
-        <List>
-          <div className="list-view">
-            {this.state.barbers.map((item, idx) => {
-              return <ListViewItem barber={item} key={idx} />
-            })}
-          </div>
-        </List>
-        <Footer year={this.props.year} />
+        <div className="list">
+          <List>
+            <div className="list-view">
+              {this.state.barbers.map((item, idx) => {
+                return <ListViewItem barber={item} key={idx} />
+              })}
+            </div>
+          </List>
+        </div>
+        {/* <Footer year={this.props.year} /> */}
       </div>
     )
   }
