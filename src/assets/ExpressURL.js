@@ -1,1 +1,3 @@
-export const API = 'http://localhost:9000'
+const API = 'http://localhost:9000'
+
+export default API
