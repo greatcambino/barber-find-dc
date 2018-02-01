@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import { Button, Header, Icon, Image, Modal, } from 'semantic-ui-react'
+import axios from 'axios'
+
+import {API} from '../Urls/Urls'
 import './ExpandedView.css'
-
-
+import chalk from 'chalk'
 
 class ExpandedView extends Component {
 
@@ -14,12 +16,27 @@ class ExpandedView extends Component {
         website: "barbershop.com",
         reviews: [
             'best haircut of my entire life. 10/10',
-            'very good haircut', 
+            'very good haircut',
             'my haircut was just okay'
-        ]
-        
+        ],
+        barbers: {}
+
     }
 
+    componentDidMount () {
+      axios.get('http://localhost:9000')
+      .then((res) => {
+        console.log('one')
+        this.setState ({
+          barber: res.data
+        })
+        console.log(this.state.barber[0].name)
+      })
+      .catch((err) => {
+        console.log('error')
+        console.log(err)
+      })
+    }
     render = () => {
         return (
         <Modal open="true" dimmer={false} size= 'small' >
@@ -27,7 +44,7 @@ class ExpandedView extends Component {
         <Modal.Content image>
           <Image wrapped size='medium' src='/assets/images/wireframe/image.png' />
           <Modal.Description>
-            <h3>Address: {this.state.address}</h3> 
+            <h3>Address: {this.state.address}</h3>
             <h3>Hours: {this.state.hours}</h3>
             <h3>Phone number: {this.state.phoneNumber}</h3>
             <h3>Website: {this.state.website}</h3>
