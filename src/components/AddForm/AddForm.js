@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Segment, Grid } from 'semantic-ui-react'
+import { Button, Form, Segment, Grid, Modal } from 'semantic-ui-react'
 import GridColumn from 'semantic-ui-react/dist/commonjs/collections/Grid/GridColumn'
 import './AddForm.css'
 import axios from 'axios'
@@ -32,36 +32,38 @@ class AddForm extends Component {
 
   render = () => {
     return (
-      <div className="form-parent">
-        <div className="add-form">
-          <Grid columns={1} padded>
-            <Grid.Column>
-              <Segment>
-                <Form>
-                  <h4>Add a Barbershop</h4>
-                  <Form.Group widths="equal">
-                    <Form.Input
-                      fluid
-                      name="name"
-                      label="Name of Barbershop"
-                      placeholder="Name of Barbershop"
-                      onChange={e => this.handleChange(e)}
-                    />
-                    <Form.Input
-                      fluid
-                      name="postalCode"
-                      label="Zip Code"
-                      placeholder="Zip Code (Washington DC only)"
-                      onChange={e => this.handleChange(e)}
-                    />
-                  </Form.Group>
-                  <Button onClick={this.handleSubmit}>Submit</Button>
-                </Form>
-              </Segment>
-            </Grid.Column>
-          </Grid>
+      <Modal>
+        <div className="form-parent">
+          <div className="add-form">
+            <Grid columns={1} padded>
+              <Grid.Column>
+                <Segment>
+                  <Form>
+                    <h4>Add a Barbershop</h4>
+                    <Form.Group widths="equal">
+                      <Form.Input
+                        fluid
+                        name="name"
+                        label="Name of Barbershop"
+                        placeholder="Name of Barbershop"
+                        onChange={e => this.handleChange(e)}
+                      />
+                      <Form.Input
+                        fluid
+                        name="postalCode"
+                        label="Zip Code"
+                        placeholder="Zip Code (Washington DC only)"
+                        onChange={e => this.handleChange(e)}
+                      />
+                    </Form.Group>
+                    <Button onClick={this.handleSubmit}>Submit</Button>
+                  </Form>
+                </Segment>
+              </Grid.Column>
+            </Grid>
+          </div>
         </div>
-      </div>
+      </Modal>
     )
   }
 }
