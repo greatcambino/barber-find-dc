@@ -27,7 +27,7 @@ Chris:
 Terrence: 
 - Front-end components
 - Project planning(ERD diagram, UI sketches)
-- CRUD functionality (Add)
+- CRUD functionality (Add, Delete)
  
 
 # Technologies Used
