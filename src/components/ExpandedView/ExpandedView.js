@@ -74,6 +74,7 @@ export default class ExpandedView extends Component {
           <Modal.Actions>
             <Button onClick={this.props.closeModal}>Close</Button>
             <Button onClick={this.openUpdateForm}>Update</Button>
+            <Button color='red' onClick={this.props.handleDelete}>Delete</Button>
           </Modal.Actions>
         </Modal.Content>
         <UpdateForm
