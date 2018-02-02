@@ -28,7 +28,7 @@ export default class ExpandedView extends Component {
   }
 
   handleDelete = () => {
-    this.closeForm()
+    this.props.closeModal()
     let deleteAPI = `${API}/${this.props.barber._id}`
     axios.delete(deleteAPI)
   }
