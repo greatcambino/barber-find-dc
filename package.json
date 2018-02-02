@@ -1,19 +1,21 @@
 {
-  "homepage": "http://zbauer91.github.io/barber-find-dc",
+
+  "homepage": "https://zbauer91.github.io/barber-find-dc",
   "name": "barber",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
+    "chalk": "^2.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.0",
     "react-responsive-carousel": "^3.1.33",
+    "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
     "semantic-ui-react": "^0.77.2"
   },
   "scripts": {
-    "predeploy": "yarn run build",
+    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,52 +1,107 @@
-import React, {Component} from 'react'
-import { Button, Header, Icon, Image, Modal, } from 'semantic-ui-react'
+import React, { Component } from 'react'
+import { Button, Header, Modal } from 'semantic-ui-react'
+
 import './ExpandedView.css'
+import UpdateForm from '../UpdateForm/UpdateForm'
+import axios from 'axios'
+import API from '../../assets/ExpressURL'
 
+export default class ExpandedView extends Component {
+  state = {
+    modalOpen: false
+  }
 
+  openEditModal = () => {
+    this.props.closeModal()
+  }
 
-class ExpandedView extends Component {
+  openUpdateForm = () => {
+    this.setState({
+      modalOpen: true
+    })
+  }
 
-    state= {
-        shopName: "shop1",
-        address: "123 lane",
-        hours: "9a - 5p",
-        phoneNumber: "123.456.7899",
-        website: "barbershop.com",
-        reviews: [
-            'best haircut of my entire life. 10/10',
-            'very good haircut', 
-            'my haircut was just okay'
-        ]
-        
-    }
+  closeForm = () => {
+    this.setState({
+      modalOpen: false
+    })
+  }
 
-    render = () => {
-        return (
-        <Modal open="true" dimmer={false} size= 'small' >
-        <h1>{this.state.shopName}</h1>
-        <Modal.Content image>
-          <Image wrapped size='medium' src='/assets/images/wireframe/image.png' />
+  handleDelete = () => {
+    this.props.closeModal()
+    let deleteAPI = `${API}/${this.props.barber._id}`
+    axios.delete(deleteAPI)
+  }
+
+  closePreviousForm = () => {
+    this.closeForm()
+    this.props.closeModal()
+  }
+
+  render = () => {
+    let mapKey = 'AIzaSyAe_2Yi4B4N3WH9Wj3HA2XnLugNyhMLSpg'
+    let search = `//www.google.com/maps/embed/v1/place?q=${this.props.barber.address.replace(
+      / /g,
+      '%20'
+    )}
+    ${this.props.barber.city},${this.props.barber.state},${this.props.barber
+      .postalcode}
+    &zoom=17 &key=${mapKey}`
+    return (
+      <Modal
+        closeOnDimmerClick={true}
+        closeOnDocumentClick={true}
+        open={this.props.expandoOpen}
+        dimmer={'blurring'}
+        size="small"
+      >
+        <Modal.Header>
+          {this.props.barber.name}
+        </Modal.Header>
+        <Modal.Content>
           <Modal.Description>
-            <h3>Address: {this.state.address}</h3> 
-            <h3>Hours: {this.state.hours}</h3>
-            <h3>Phone number: {this.state.phoneNumber}</h3>
-            <h3>Website: {this.state.website}</h3>
-            <h3>Reviews: {this.state.reviews.map((item, index) => {
-                return (
-                    <div key={index}> {item}</div>
-                )
-            })}</h3>
+            <Header>
+              {this.props.barber.rating}
+            </Header>
+            <p>
+              {this.props.barber.phone}
+            </p>
+            <p>
+              {this.props.barber.website}
+            </p>
+            <p>
+              {this.props.barber.address}
+            </p>
+            {this.props.barber.reviews.map((item, idx) => {
+              return (
+                <p key={idx}>
+                  {item.text}
+                </p>
+              )
+            })}
+            <div className="map">
+              <iFrame src={search} width="500" height="325" />
+            </div>
           </Modal.Description>
+          <Modal.Actions>
+            <Button type="button" onClick={this.props.closeModal}>
+              Close
+            </Button>
+            <Button type="button" onClick={this.openUpdateForm}>
+              Update
+            </Button>
+            <Button type="button" color="red" onClick={this.handleDelete}>
+              Delete
+            </Button>
+          </Modal.Actions>
         </Modal.Content>
-        <Modal.Actions>
-          <Button className="thumbButton">
-             <Icon name= 'thumbs outline up' size= 'big' />
-          </Button>
-        </Modal.Actions>
-        </Modal>
-        )
-
-    }
+        <UpdateForm
+          {...this.props}
+          modalOpen={this.state.modalOpen}
+          closeForm={this.closeForm}
+          closePreviousForm={this.closePreviousForm}
+        />
+      </Modal>
+    )
+  }
 }
-
-export default ExpandedView

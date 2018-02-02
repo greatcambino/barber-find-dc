@@ -1,33 +1,63 @@
+// import dependencies
 import React, { Component } from 'react'
 
-import {
-  Link,
-  Route
-} from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
+// import stylesheet
 import './App.css'
-import About from './About'
-import Barbers from './Barbers'
-import Home from './Home'
 
+// import components
+import WelcomePage from './pages/WelcomePage/WelcomePage'
+import ListView from './pages/ListView/ListView'
+import About from './pages/About/About'
+import VideoView from './pages/VideoView/VideoView'
+
+// create component
 class App extends Component {
-  render () {
-    return (
-      <div className='App'>
-        <div className='Nav'>
-          <Link to='/Home'>Home</Link>
-          <Link to='/Barbers'>Barbers</Link>
-          <Link to='/About'>About</Link>
-        </div>
+  // initialize state
+  state = {
+    year: ''
+  }
 
-        <div className='body'>
-          <Route path='/Home' component={Home} />
-          <Route path='/Barbers' component={Barbers} />
-          <Route path='/About' component={About} />
-        </div>
-      </div>
+  // get date when component mounts
+  componentDidMount = () => {
+    let year = new Date().getFullYear()
+    this.setState({
+      year: year
+    })
+  }
+
+  // render components
+  render = () => {
+    return (
+      <main>
+        <Switch>
+          {/* routes */}
+          <Route
+            exact
+            path="/"
+            render={props => <WelcomePage {...props} year={this.state.year} />}
+          />
+          <Route
+            exact
+            path="/shops"
+            render={props => <ListView {...props} year={this.state.year} />}
+          />
+          <Route
+            exact
+            path="/videos"
+            render={props => <VideoView {...props} year={this.state.year} />}
+          />
+          <Route
+            exact
+            path="/about"
+            render={props => <About {...props} year={this.state.year} />}
+          />
+        </Switch>
+      </main>
     )
   }
 }
 
+// export component
 export default App

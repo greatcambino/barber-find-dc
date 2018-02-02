@@ -1,31 +1,23 @@
+// import components
 import React, { Component } from 'react'
 import Footer from '../../components/Footer/Footer'
 import './WelcomePage.css'
-import ImgCarousel from '../../components/ImgCarousel/ImgCarousel'
 import WelcomeDialog from '../../components/WelcomeDialog/WelcomeDialog'
 
+// create component
 class WelcomePage extends Component {
-  state = {
-    currentYear: ''
-  }
-
-  componentDidMount = () => {
-    let year = new Date().getFullYear()
-    this.setState({
-      currentYear: year
-    })
-  }
-
   render = () => {
     return (
       <div>
+        {/* render components */}
         <WelcomeDialog />
-        <Footer year={this.state.currentYear} />
+        <Footer year={this.props.year} />
       </div>
     )
   }
 }
 
+// export component
 export default WelcomePage
 
 // <Footer year={this.state.currentYear} />

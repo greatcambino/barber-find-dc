@@ -1,0 +1,9 @@
+.form-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.update-form {
+  width: 50%;
+  align-items: center;
+}

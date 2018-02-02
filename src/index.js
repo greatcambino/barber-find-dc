@@ -1,15 +1,18 @@
+// import dependencies
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {
-  BrowserRouter as Router
-} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
+// import stylesheet
 import './index.css'
 
-import WelcomePage from './pages/WelcomePage/WelcomePage'
+// import component
 import App from './App'
-import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(<WelcomePage />, document.getElementById('root'))
-
-registerServiceWorker()
+// render
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root')
+)
