@@ -38,9 +38,6 @@ export default class ExpandedView extends Component {
           {this.props.barber.name}
         </Modal.Header>
         <Modal.Content>
-          <div className='map'>
-            <iFrame src={search} width="250" height="250" />
-          </div>
           <Modal.Description>
             <Header>
               {this.props.barber.rating}
@@ -61,6 +58,9 @@ export default class ExpandedView extends Component {
                 </p>
               )
             })}
+            <div className='map'>
+              <iFrame src={search} width="500" height="325" />
+            </div>
           </Modal.Description>
           <Modal.Actions>
             <Button onClick={this.props.closeModal}>Close</Button>
