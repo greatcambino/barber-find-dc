@@ -6,12 +6,6 @@ import WelcomeDialog from '../../components/WelcomeDialog/WelcomeDialog'
 
 // create component
 class WelcomePage extends Component {
-  // check data when component mounts
-  componentDidMount = () => {
-    console.log(this.props.location)
-  }
-
-  // render
   render = () => {
     return (
       <div>

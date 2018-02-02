@@ -36,15 +36,13 @@ class ListView extends Component {
     // axios call to get data from database
     axios
       .get('http://localhost:9000')
-
-      .then(res => {
+      .then((res, err) => {
         // set state variable to data received from call
         this.setState({
           barbers: res.data
         })
       })
       .catch(err => {
-        console.log('error')
         console.log(err)
       })
   }
