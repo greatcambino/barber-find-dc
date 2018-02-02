@@ -3,6 +3,8 @@ import { Button, Header, Modal } from 'semantic-ui-react'
 
 import './ExpandedView.css'
 import UpdateForm from '../UpdateForm/UpdateForm'
+import axios from 'axios'
+import API from '../../assets/ExpressURL'
 
 export default class ExpandedView extends Component {
   state = {
@@ -25,10 +27,14 @@ export default class ExpandedView extends Component {
     })
   }
 
+  handleDelete = () => {
+    this.closeForm()
+    let deleteAPI = `${API}/${this.props.barber._id}`
+    axios.delete(deleteAPI)
+  }
+
   closePreviousForm = () => {
-    this.setState({
-      modalOpen: false
-    })
+    this.closeForm()
     this.props.closeModal()
   }
 
@@ -42,7 +48,13 @@ export default class ExpandedView extends Component {
       .postalcode}
     &zoom=17 &key=${mapKey}`
     return (
-      <Modal open={this.props.expandoOpen} dimmer={'blurring'} size="small">
+      <Modal
+        closeOnDimmerClick={true}
+        closeOnDocumentClick={true}
+        open={this.props.expandoOpen}
+        dimmer={'blurring'}
+        size="small"
+      >
         <Modal.Header>
           {this.props.barber.name}
         </Modal.Header>
@@ -72,9 +84,15 @@ export default class ExpandedView extends Component {
             </div>
           </Modal.Description>
           <Modal.Actions>
-            <Button onClick={this.props.closeModal}>Close</Button>
-            <Button onClick={this.openUpdateForm}>Update</Button>
-            <Button color='red' onClick={this.props.handleDelete}>Delete</Button>
+            <Button type="button" onClick={this.props.closeModal}>
+              Close
+            </Button>
+            <Button type="button" onClick={this.openUpdateForm}>
+              Update
+            </Button>
+            <Button type="button" color="red" onClick={this.handleDelete}>
+              Delete
+            </Button>
           </Modal.Actions>
         </Modal.Content>
         <UpdateForm

@@ -27,38 +27,28 @@ class AddForm extends Component {
 
   render = () => {
     return (
-      <div className="form-parent">
-        <div className="add-form">
-          <Grid columns={1} padded>
-            <Grid.Column>
-              <Segment>
-                <Form>
-                  <h4>Add a Barbershop</h4>
-                  <Form.Group widths="equal">
-                    <Form.Input
-                      fluid
-                      name="name"
-                      label="Name of Barbershop"
-                      placeholder="Name of Barbershop"
-                      onChange={e => this.handleChange(e)}
-                    />
-                    <Form.Input
-                      fluid
-                      name="postalcode"
-                      label="Zip Code"
-                      placeholder="Zip Code (Washington DC only)"
-                      onChange={e => this.handleChange(e)}
-                    />
-                  </Form.Group>
-                  <Button type="button" onClick={this.handleSubmit}>
-                    Submit
-                  </Button>
-                </Form>
-              </Segment>
-            </Grid.Column>
-          </Grid>
-        </div>
-      </div>
+      <Segment className="form-segment" inverted color="red">
+        <Form>
+          <h4>Add a Barbershop</h4>
+          <Form.Group widths="equal">
+            <Form.Input
+              fluid
+              name="name"
+              label="Name of Barbershop"
+              placeholder="Name of Barbershop"
+              onChange={e => this.handleChange(e)}
+            />
+            <Form.Input
+              fluid
+              name="postalcode"
+              label="Zip Code"
+              placeholder="Zip Code (Washington DC only)"
+              onChange={e => this.handleChange(e)}
+            />
+          </Form.Group>
+          <Button onClick={this.handleSubmit}>Submit</Button>
+        </Form>
+      </Segment>
     )
   }
 }

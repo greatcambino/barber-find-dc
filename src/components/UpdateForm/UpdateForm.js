@@ -9,8 +9,7 @@ class UpdateForm extends Component {
     name: this.props.barber.name,
     address: this.props.barber.address,
     website: this.props.barber.website,
-    postalCode: this.props.barber.postalCode,
-    hours: this.props.barber.hours,
+    postalcode: this.props.barber.postalcode,
     phone: this.props.barber.phone,
     city: this.props.barber.city,
     state: this.props.barber.state
@@ -36,7 +35,11 @@ class UpdateForm extends Component {
 
   render = () => {
     return (
-      <Modal open={this.props.modalOpen}>
+      <Modal
+        closeOnDimmerClick={true}
+        closeOnDocumentClick={true}
+        open={this.props.modalOpen}
+      >
         <div className="form-parent">
           <div className="update-form">
             <Grid columns={1} padded>
@@ -54,9 +57,9 @@ class UpdateForm extends Component {
                       />
                       <Form.Input
                         fluid
-                        name="postalCode"
+                        name="postalcode"
                         label="Zip Code"
-                        placeholder={this.props.barber.postalCode}
+                        placeholder={this.props.barber.postalcode}
                         onChange={e => this.handleChange(e)}
                       />
                     </Form.Group>
@@ -93,13 +96,6 @@ class UpdateForm extends Component {
                       />
                     </Form.Group>
                     <Form.Group widths="equal">
-                      <Form.Input
-                        fluid
-                        name="hours"
-                        label="Hours"
-                        placeholder={this.props.barber.hours}
-                        onChange={e => this.handleChange(e)}
-                      />
                       <Form.Input
                         fluid
                         name="phone"

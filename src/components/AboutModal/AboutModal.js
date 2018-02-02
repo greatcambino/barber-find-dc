@@ -4,7 +4,12 @@ import { Modal, Icon } from 'semantic-ui-react'
 export default class AboutModal extends Component {
   render = () => {
     return (
-      <Modal open={true} dimmer={false}>
+      <Modal
+        closeOnDimmerClick={true}
+        closeOnDocumentClick={true}
+        open={true}
+        dimmer={false}
+      >
         <Modal.Header className="header">
           <h2>About BarberHub</h2>
         </Modal.Header>

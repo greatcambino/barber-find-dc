@@ -6,7 +6,13 @@ import './WelcomeDialog.css'
 export default class WelcomeDialog extends Component {
   render = () => {
     return (
-      <Modal open={true} dimmer={false} size="small">
+      <Modal
+        closeOnDimmerClick={true}
+        closeOnDocumentClick={true}
+        open={true}
+        dimmer={false}
+        size="small"
+      >
         <Modal.Header className="header">BarberHub</Modal.Header>
         <Modal.Content className="description">
           <p>
@@ -24,7 +30,7 @@ export default class WelcomeDialog extends Component {
             Shops
           </Button>
           {/* <p>or</p> */}
-          <Divider hidden></Divider>
+          <Divider hidden />
           <Button as={Link} to="/videos" className="button-icons">
             <Icon name="play" size="large" />
             Tutorials
