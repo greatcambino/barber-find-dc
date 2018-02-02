@@ -9,14 +9,18 @@ class ListViewItem extends Component {
   }
 
   handleExpandClick = e => {
-    e.preventDefault()
+    if (e) {
+      e.preventDefault()
+    }
     this.setState({
       expandoOpen: true
     })
   }
 
   closeModal = e => {
-    e.preventDefault()
+    if (e) {
+      e.preventDefault()
+    }
     this.setState({
       expandoOpen: false
     })
