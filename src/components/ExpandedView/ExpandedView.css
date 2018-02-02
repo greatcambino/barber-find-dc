@@ -2,3 +2,8 @@ h1 {
     text-align: center;
 }
 
+.map {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}

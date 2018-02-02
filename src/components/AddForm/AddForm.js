@@ -22,15 +22,12 @@ class AddForm extends Component {
   handleSubmit(e) {
     e.preventDefault()
     axios.post(API, JSON.stringify(this.state)).catch(err =>
-      console.log(err).then(res => {
-        this.props.history.push('/shops') // don't forget to update this path
-      })
+      console.log(err)
     )
   }
 
   render = () => {
     return (
-      <Modal>
         <div className="form-parent">
           <div className="add-form">
             <Grid columns={1} padded>
@@ -61,7 +58,6 @@ class AddForm extends Component {
             </Grid>
           </div>
         </div>
-      </Modal>
     )
   }
 }
