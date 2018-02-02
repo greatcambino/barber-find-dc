@@ -19,9 +19,9 @@ export default class Footer extends Component {
     return (
       <Card style={{ width: '25vw' }}>
         <Card.Header>
-          <h2>
+          <h4>
             {this.props.video.header}
-          </h2>
+          </h4>
         </Card.Header>
         <Embed
           id={this.props.video.videoID}
