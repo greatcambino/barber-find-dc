@@ -1,3 +1,4 @@
+// import components
 import React, { Component } from 'react'
 import { List } from 'semantic-ui-react'
 import NavBar from '../../components/NavBar/NavBar'
@@ -8,24 +9,30 @@ import axios from 'axios'
 import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
 
+// create component
 class ListView extends Component {
   componentDidMount = () => {
     let path = this.props.location.pathname
+    // initialize state
     this.setState({
       path: path
     })
   }
 
+  // set state
   state = {
     currentYear: '',
     barbers: []
   }
 
+  // get year when component mounts
   componentDidMount = () => {
     let year = new Date().getFullYear()
+    // set year
     this.setState({
       currentYear: year
     })
+    // axios call to get data from database
     axios
       .get('http://localhost:9000')
       .catch(err => {
@@ -33,12 +40,14 @@ class ListView extends Component {
         console.log(err)
       })
       .then(res => {
+        // set state variable to data received from call
         this.setState({
           barbers: res.data
         })
       })
   }
 
+  // render component
   render = () => {
     return (
       <div>
@@ -59,4 +68,5 @@ class ListView extends Component {
   }
 }
 
+// export component
 export default ListView
