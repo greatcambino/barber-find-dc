@@ -1,3 +1,4 @@
+// import components
 import React, { Component } from 'react'
 import { Card } from 'semantic-ui-react'
 import NavBar from '../../components/NavBar/NavBar'
@@ -6,7 +7,9 @@ import SubHeader from '../../components/SubHeader/SubHeader'
 import Video from '../../components/Video/Video'
 import './VideoView.css'
 
+// create component
 class VideoView extends Component {
+  // initialize state to hold video data
   state = {
     tools: [
       {
@@ -61,6 +64,7 @@ class VideoView extends Component {
     ]
   }
 
+// render component
   render = () => {
     return (
       <div>
@@ -106,4 +110,5 @@ class VideoView extends Component {
   }
 }
 
+// export component
 export default VideoView
