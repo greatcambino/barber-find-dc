@@ -1,11 +1,7 @@
-
-.form-parent {
-    display: flex;
-    justify-content: center;
+.form-segment {
+    width: 40vw 
 }
 
-
-.add-form {
-    width: 50%;
-    align-items: center
+h4 {
+    align-content: center
 }

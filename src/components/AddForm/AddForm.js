@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Button, Form, Segment, Grid, Modal } from 'semantic-ui-react'
+import { Button, Form, Segment, Grid, Modal, Header } from 'semantic-ui-react'
 import './AddForm.css'
 import axios from 'axios'
 import API from '../../assets/ExpressURL'
+
 
 class AddForm extends Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class AddForm extends Component {
       postalCode: ''
     }
   }
+
 
   handleChange(e) {
     console.log(this.state)
@@ -27,38 +29,32 @@ class AddForm extends Component {
     )
   }
 
+
   render = () => {
     return (
-        <div className="form-parent">
-          <div className="add-form">
-            <Grid columns={1} padded>
-              <Grid.Column>
-                <Segment>
-                  <Form>
-                    <h4>Add a Barbershop</h4>
-                    <Form.Group widths="equal">
-                      <Form.Input
-                        fluid
-                        name="name"
-                        label="Name of Barbershop"
-                        placeholder="Name of Barbershop"
-                        onChange={e => this.handleChange(e)}
-                      />
-                      <Form.Input
-                        fluid
-                        name="postalCode"
-                        label="Zip Code"
-                        placeholder="Zip Code (Washington DC only)"
-                        onChange={e => this.handleChange(e)}
-                      />
-                    </Form.Group>
-                    <Button onClick={this.handleSubmit}>Submit</Button>
-                  </Form>
-                </Segment>
-              </Grid.Column>
-            </Grid>
-          </div>
-        </div>
+      <Segment className="form-segment" inverted color='red'>
+        <Form>
+          <h4>Add a Barbershop</h4>
+          <Form.Group widths="equal" >
+            <Form.Input
+              fluid
+              name="name"
+              label="Name of Barbershop"
+              placeholder="Name of Barbershop"
+              onChange={e => this.handleChange(e)}
+            />
+            <Form.Input
+              fluid
+              name="postalCode"
+              label="Zip Code"
+              placeholder="Zip Code (Washington DC only)"
+              onChange={e => this.handleChange(e)}
+            />
+          </Form.Group>
+          <Button onClick={this.handleSubmit}>Submit</Button>
+        </Form>
+      </Segment>
+
     )
   }
 }

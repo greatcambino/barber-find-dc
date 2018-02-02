@@ -37,6 +37,9 @@ MERN Stack
 - React.js
 - Nodejs
 
+- HTML5 / CSS3
+- Semantic UI
+
 # APIs
 Our group incorporated the following APIs for this project: 
 - FourSquare API
