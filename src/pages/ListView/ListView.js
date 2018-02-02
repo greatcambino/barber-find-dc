@@ -61,6 +61,9 @@ class ListView extends Component {
               {this.state.barbers.map((item, idx) => {
                 return <ListViewItem barber={item} key={idx} />
               })}
+              <div>
+              <AddForm/>
+              </div>
             </div>
           </List>
         </div>
