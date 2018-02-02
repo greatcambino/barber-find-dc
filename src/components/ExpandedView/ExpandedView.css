@@ -5,4 +5,5 @@ h1 {
 .map {
   display: flex;
   justify-content: center;
+  padding: 25px;
 }
