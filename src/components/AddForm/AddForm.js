@@ -31,7 +31,6 @@ class AddForm extends Component {
 
   render = () => {
     return (
-      <Modal>
         <div className="form-parent">
           <div className="add-form">
             <Grid columns={1} padded>
@@ -62,7 +61,6 @@ class AddForm extends Component {
             </Grid>
           </div>
         </div>
-      </Modal>
     )
   }
 }

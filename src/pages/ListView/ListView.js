@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar/NavBar'
 // import Footer from '../../components/Footer/Footer'
 import SubHeader from '../../components/SubHeader/SubHeader'
 import axios from 'axios'
+import AddForm from '../../components/AddForm/AddForm'
 
 import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
@@ -35,15 +36,16 @@ class ListView extends Component {
     // axios call to get data from database
     axios
       .get('http://localhost:9000')
-      .catch(err => {
-        console.log('error')
-        console.log(err)
-      })
+
       .then(res => {
         // set state variable to data received from call
         this.setState({
           barbers: res.data
         })
+      })
+      .catch(err => {
+        console.log('error')
+        console.log(err)
       })
   }
 
@@ -63,9 +65,12 @@ class ListView extends Component {
           </List>
         </div>
         {/* <Footer year={this.props.year} /> */}
+
       </div>
+
     )
   }
+
 }
 
 // export component
