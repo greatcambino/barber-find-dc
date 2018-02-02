@@ -23,23 +23,14 @@ class UpdateForm extends Component {
   }
 
   handleSubmit = e => {
-    console.log(API)
-    console.log(this.props.barber)
-    console.log(this.props.barber._id)
-    console.log(JSON.stringify(this.state))
     // e.preventDefault()
-
     let putAPI = `${API}/${this.props.barber._id}`
-    console.log(putAPI)
-
     let req = {
       url: putAPI,
       method: 'PUT',
       data: JSON.stringify(this.state)
     }
     axios(req)
-    // axios.put(putAPI, { data }).catch(err => console.log(err))
-
     this.props.closePreviousForm()
   }
 

@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 import { Menu } from 'semantic-ui-react'
 
 export default class NavBar extends Component {
-  componentDidMount = () => {
-    console.log(this.props.path)
-  }
   render = () => {
     return (
       <div>

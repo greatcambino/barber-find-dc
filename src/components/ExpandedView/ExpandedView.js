@@ -33,10 +33,13 @@ export default class ExpandedView extends Component {
   }
 
   render = () => {
-    console.log(this.props)
     let mapKey = 'AIzaSyAe_2Yi4B4N3WH9Wj3HA2XnLugNyhMLSpg'
-    let search = `//www.google.com/maps/embed/v1/place?q=${this.props.barber.address.replace(/ /g, '%20')}
-    ${this.props.barber.city},${this.props.barber.state},${this.props.barber.postalcode}
+    let search = `//www.google.com/maps/embed/v1/place?q=${this.props.barber.address.replace(
+      / /g,
+      '%20'
+    )}
+    ${this.props.barber.city},${this.props.barber.state},${this.props.barber
+      .postalcode}
     &zoom=17 &key=${mapKey}`
     return (
       <Modal open={this.props.expandoOpen} dimmer={'blurring'} size="small">
@@ -64,7 +67,7 @@ export default class ExpandedView extends Component {
                 </p>
               )
             })}
-            <div className='map'>
+            <div className="map">
               <iFrame src={search} width="500" height="325" />
             </div>
           </Modal.Description>
