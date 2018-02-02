@@ -16,21 +16,31 @@ class UpdateForm extends Component {
     state: this.props.barber.state
   }
 
-  handleChange(e) {
-    console.log(this.state)
+  handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
+    console.log(API)
+    console.log(this.props.barber)
+    console.log(this.props.barber._id)
+    console.log(JSON.stringify(this.state))
+    // e.preventDefault()
+
     let putAPI = `${API}/${this.props.barber._id}`
-    e.preventDefault()
-    axios.put(putAPI, JSON.stringify(this.state)).catch(err =>
-      console.log(err).then(res => {
-        this.props.history.push('/shops')
-      })
-    )
+    console.log(putAPI)
+
+    let req = {
+      url: putAPI,
+      method: 'PUT',
+      data: JSON.stringify(this.state)
+    }
+    axios(req)
+    // axios.put(putAPI, { data }).catch(err => console.log(err))
+
+    this.props.closePreviousForm()
   }
 
   render = () => {
@@ -48,14 +58,14 @@ class UpdateForm extends Component {
                         fluid
                         name="name"
                         label="Name of Barbershop"
-                        placeholder="Name of Barbershop"
+                        placeholder={this.props.barber.name}
                         onChange={e => this.handleChange(e)}
                       />
                       <Form.Input
                         fluid
                         name="postalCode"
                         label="Zip Code"
-                        placeholder="Zip Code (Washington DC only)"
+                        placeholder={this.props.barber.postalCode}
                         onChange={e => this.handleChange(e)}
                       />
                     </Form.Group>
@@ -64,14 +74,14 @@ class UpdateForm extends Component {
                         fluid
                         name="website"
                         label="Website"
-                        placeholder="Website"
+                        placeholder={this.props.barber.website}
                         onChange={e => this.handleChange(e)}
                       />
                       <Form.Input
                         fluid
                         name="address"
                         label="Address"
-                        placeholder="Address"
+                        placeholder={this.props.barber.address}
                         onChange={e => this.handleChange(e)}
                       />
                     </Form.Group>
@@ -80,14 +90,14 @@ class UpdateForm extends Component {
                         fluid
                         name="city"
                         label="City"
-                        placeholder="City"
+                        placeholder={this.props.barber.city}
                         onChange={e => this.handleChange(e)}
                       />
                       <Form.Input
                         fluid
                         name="state"
                         label="State"
-                        placeholder="State"
+                        placeholder={this.props.barber.state}
                         onChange={e => this.handleChange(e)}
                       />
                     </Form.Group>
@@ -96,19 +106,23 @@ class UpdateForm extends Component {
                         fluid
                         name="hours"
                         label="Hours"
-                        placeholder="Hours"
+                        placeholder={this.props.barber.hours}
                         onChange={e => this.handleChange(e)}
                       />
                       <Form.Input
                         fluid
                         name="phone"
                         label="Phone Number"
-                        placeholder="Phone Number"
+                        placeholder={this.props.barber.phone}
                         onChange={e => this.handleChange(e)}
                       />
                     </Form.Group>
-                    <Button onClick={this.handleSubmit}>Submit</Button>
-                    <Button onClick={this.props.closeForm}>Close</Button>
+                    <Button type="button" onClick={this.handleSubmit}>
+                      Submit
+                    </Button>
+                    <Button type="button" onClick={this.props.closeForm}>
+                      Close
+                    </Button>
                   </Form>
                 </Segment>
               </Grid.Column>

@@ -4,9 +4,6 @@ import './WelcomePage.css'
 import WelcomeDialog from '../../components/WelcomeDialog/WelcomeDialog'
 
 class WelcomePage extends Component {
-  componentDidMount = () => {
-    console.log(this.props.location)
-  }
   render = () => {
     return (
       <div>

@@ -28,14 +28,13 @@ class ListView extends Component {
     })
     axios
       .get('http://localhost:9000')
-      .catch(err => {
-        console.log('error')
-        console.log(err)
-      })
-      .then(res => {
+      .then((res, err) => {
         this.setState({
           barbers: res.data
         })
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 

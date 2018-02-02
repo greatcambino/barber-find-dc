@@ -25,8 +25,14 @@ export default class ExpandedView extends Component {
     })
   }
 
+  closePreviousForm = () => {
+    this.setState({
+      modalOpen: false
+    })
+    this.props.closeModal()
+  }
+
   render = () => {
-    console.log(this.props)
     return (
       <Modal open={this.props.expandoOpen} dimmer={'blurring'} size="small">
         <Modal.Header>
@@ -63,6 +69,7 @@ export default class ExpandedView extends Component {
           {...this.props}
           modalOpen={this.state.modalOpen}
           closeForm={this.closeForm}
+          closePreviousForm={this.closePreviousForm}
         />
       </Modal>
     )
