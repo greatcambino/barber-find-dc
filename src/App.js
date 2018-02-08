@@ -35,22 +35,22 @@ class App extends Component {
           {/* routes */}
           <Route
             exact
-            path="/barber-find-dc/"
+            path="/"
             render={props => <WelcomePage {...props} year={this.state.year} />}
           />
           <Route
             exact
-            path="/barber-find-dc/shops"
+            path="/shops"
             render={props => <ListView {...props} year={this.state.year} />}
           />
           <Route
             exact
-            path="/barber-find-dc/videos"
+            path="/videos"
             render={props => <VideoView {...props} year={this.state.year} />}
           />
           <Route
             exact
-            path="/barber-find-dc/about"
+            path="/about"
             render={props => <About {...props} year={this.state.year} />}
           />
         </Switch>
