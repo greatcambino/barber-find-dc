@@ -6,6 +6,7 @@ import NavBar from '../../components/NavBar/NavBar'
 import SubHeader from '../../components/SubHeader/SubHeader'
 import axios from 'axios'
 import AddForm from '../../components/AddForm/AddForm'
+import API from '../../assets/ExpressURL'
 
 import ListViewItem from '../../components/ListViewItem/ListViewItem'
 import './ListView.css'
@@ -35,7 +36,7 @@ class ListView extends Component {
     })
     // axios call to get data from database
     axios
-      .get('http://localhost:9000')
+      .get(API)
       .then((res, err) => {
         // set state variable to data received from call
         this.setState({
@@ -60,18 +61,15 @@ class ListView extends Component {
                 return <ListViewItem barber={item} key={idx} />
               })}
               <div>
-              <AddForm/>
+                <AddForm />
               </div>
             </div>
           </List>
         </div>
         {/* <Footer year={this.props.year} /> */}
-
       </div>
-
     )
   }
-
 }
 
 // export component

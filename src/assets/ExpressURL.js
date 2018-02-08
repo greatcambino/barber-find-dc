@@ -1,3 +1,3 @@
-const API = 'https://barber-find-api.herokuapp.com/'
+const API = 'https://barber-find-api.herokuapp.com'
 
 export default API
