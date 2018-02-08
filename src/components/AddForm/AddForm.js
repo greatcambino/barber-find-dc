@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Segment, Grid } from 'semantic-ui-react'
+import { Button, Form, Segment } from 'semantic-ui-react'
 import './AddForm.css'
 import axios from 'axios'
 import API from '../../assets/ExpressURL'
