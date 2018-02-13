@@ -12,7 +12,7 @@
 
 ### Zach:
 - React flux and props/state management
-- Trello management
+- Trello and GitHub branch management
 -	Debugging refactoring
 
 ### Chris:
