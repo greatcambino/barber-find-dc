@@ -25,13 +25,17 @@ export default class WelcomeDialog extends Component {
           </p>
         </Modal.Content>
         <Modal.Actions className="button-container">
-          <Button as={Link} to="/shops" className="button-icons">
+          <Button as={Link} to="/barber-find-dc/shops" className="button-icons">
             <Icon name="building outline" size="large" />
             Shops
           </Button>
           {/* <p>or</p> */}
           <Divider hidden />
-          <Button as={Link} to="/videos" className="button-icons">
+          <Button
+            as={Link}
+            to="/barber-find-dc/videos"
+            className="button-icons"
+          >
             <Icon name="play" size="large" />
             Tutorials
           </Button>
